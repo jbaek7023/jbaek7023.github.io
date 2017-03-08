@@ -13,7 +13,7 @@ export default class Navbar extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
           </button>
-          <a className="navbar-brand name-brand" href="#">Jae-Min Baek</a>
+          <Link to='/' className="navbar-brand name-brand">Jae-Min Baek</Link>
       </div>
     );
   }

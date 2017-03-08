@@ -33,7 +33,7 @@ class Projects extends Component {
 
   renderThumbnail(project) {
     return (
-      <div className="col-md-4">
+      <div key={project.title} className="col-md-4">
         <div className="thumbnail">
           <img alt="Bootstrap Thumbnail Third" src={ project.img_src } />
           <div className="caption">
