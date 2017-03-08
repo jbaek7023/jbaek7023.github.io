@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Categories from './projects_category';
+import ProjectThumbnails from './projects_thumbnails'
 
-
-class Projects extends Component {
+export default class Projects extends Component {
+  // Render the Description
   renderDescriptionContent() {
     return(
       <div className="content-section-c">
@@ -18,61 +20,17 @@ class Projects extends Component {
     );
   }
 
-  renderProjectList() {
-    return (
-      <ul className="list-group categories">
-        <li className="list-group-item">All projects</li>
-        <li className="list-group-item">Deep Learning</li>
-        <li className="list-group-item">Machine Learning</li>
-        <li className="list-group-item">System&amp; Architecture</li>
-        <li className="list-group-item">Information&amp; Network</li>
-        <li className="list-group-item">Mobile Development</li>
-      </ul>
-    );
-  }
-
-  renderThumbnail(project) {
-    return (
-      <div key={project.title} className="col-md-4">
-        <div className="thumbnail">
-          <img alt="Bootstrap Thumbnail Third" src={ project.img_src } />
-          <div className="caption">
-            <h3>
-              { project.title }
-            </h3>
-            <p>
-              { project.description }
-            </p>
-            <p>
-              <a className="btn btn-primary" href="#">Action</a> <a className="btn" href="#">Action</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  //if all, deep_learning, machine_learning, sys_arc, web, mob
-  renderProjects() {
-    return (
-      <div className="row">
-        {this.props.projects[0].all.map((project) => {
-          return(this.renderThumbnail(project))
-        })}
-      </div>
-    );
-  }
-
+  // Render Project List and Contents
   renderProjectListAndContent() {
     return (
       <div className="content-section-b">
         <div className="container">
           <div className="row">
             <div className="col-md-2">
-              {this.renderProjectList()}
+              <Categories />
             </div>
             <div className="col-md-10">
-              {this.renderProjects()}
+              <ProjectThumbnails />
             </div>
           </div>
         </div>
@@ -89,11 +47,3 @@ class Projects extends Component {
     );
   };
 }
-
-function mapStateToProps(state) {
-  return {
-    projects: state.projects
-  }
-}
-
-export default connect(mapStateToProps)(Projects);
