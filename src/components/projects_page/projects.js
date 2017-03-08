@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class Projects extends Component {
+
+class Projects extends Component {
   renderDescriptionContent() {
     return(
       <div className="content-section-c">
@@ -22,18 +24,41 @@ export default class Projects extends Component {
         <li className="list-group-item">All projects</li>
         <li className="list-group-item">Deep Learning</li>
         <li className="list-group-item">Machine Learning</li>
-        <li className="list-group-item">System&amp;Architecture</li>
-        <li className="list-group-item">Web Development</li>
+        <li className="list-group-item">System&amp; Architecture</li>
+        <li className="list-group-item">Information&amp; Network</li>
         <li className="list-group-item">Mobile Development</li>
       </ul>
     );
   }
 
-  //projects.map((project) => { return (<div>project.title</div>);})
+  renderThumbnail(project) {
+    return (
+      <div className="col-md-4">
+        <div className="thumbnail">
+          <img alt="Bootstrap Thumbnail Third" src={ project.img_src } />
+          <div className="caption">
+            <h3>
+              { project.title }
+            </h3>
+            <p>
+              { project.description }
+            </p>
+            <p>
+              <a className="btn btn-primary" href="#">Action</a> <a className="btn" href="#">Action</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  //if all, deep_learning, machine_learning, sys_arc, web, mob
   renderProjects() {
     return (
       <div className="row">
-
+        {this.props.projects[0].all.map((project) => {
+          return(this.renderThumbnail(project))
+        })}
       </div>
     );
   }
@@ -64,3 +89,11 @@ export default class Projects extends Component {
     );
   };
 }
+
+function mapStateToProps(state) {
+  return {
+    projects: state.projects
+  }
+}
+
+export default connect(mapStateToProps)(Projects);
