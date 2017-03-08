@@ -9,7 +9,7 @@ import reducers from './reducers';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import Home from './components/home_page/home';
 import Projects from './components/projects_page/projects';
-
+import Resume from './components/resume_page/resume'
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 ReactDOM.render(
@@ -18,6 +18,7 @@ ReactDOM.render(
       <Route path="/" component={App} >
         <IndexRoute component={Home}/>
         <Route path="projects" component={Projects} />
+        <Route path="resume" component={Resume} />
       </Route>
     </Router>
   </Provider>

@@ -26,10 +26,10 @@ export default class Navbar extends Component {
                   <Link to='/'>About</Link>
               </li>
               <li>
-                  <a>Resume/CV</a>
+                  <Link to='/projects'>Projects</Link>
               </li>
               <li>
-                  <Link to='/projects'>Projects</Link>
+                  <Link to='/resume'>Resume</Link>
               </li>
           </ul>
       </div>
