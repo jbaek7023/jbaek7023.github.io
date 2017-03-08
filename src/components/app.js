@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
+import Navbar from './navbar'
+import Footer from './footer'
 
 export default class App extends Component {
   render() {
     return (
-      <div>React simple starter</div>
+      <div>
+        <Navbar />
+        {this.props.children}
+        <Footer />
+      </div>
     );
   }
 }
