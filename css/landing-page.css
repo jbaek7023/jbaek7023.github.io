@@ -294,3 +294,8 @@ p.copyright {
 .grid-item { width: 29%; }
 /* fluid 4% gutter */
 .gutter-sizer { width: 4%; }
+
+.btn {
+  margin: 0px;
+  padding: 0px;
+}

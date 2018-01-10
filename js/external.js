@@ -23,9 +23,19 @@ var projects = {
 					var tags = project.tags;
 					var className = 'grid-item element-item';
           var divg = $('<p>');
+          divg.text("Tags: ")
 					tags.forEach(function(tag) {
 						className += " "+tag;
-            divg.append($("<a>").attr({"href":"#", "class":"btn"}).text(tag))
+            if(tag=="ai") {
+              tag = "Artificial Intelligence"
+            } else if(tag=="ad") {
+              tag = "App Development"
+            } else if(tag=="sa") {
+              tag = "Systems"
+            } else if(tag=="in") {
+              tag = "Networking"
+            }
+            divg.append($("<span>").append($("<a>").attr({"href":"#", "class":"btn"}).text(tag)))
 					})
 
 					$('#grid').append(
