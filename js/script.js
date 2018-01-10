@@ -1,4 +1,5 @@
 
+
 $(document).ready(function(){
 	$('#all').click(function(){
 		if($(this).hasClass('not-active-button')){
