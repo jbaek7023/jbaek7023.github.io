@@ -1,3 +1,4 @@
+* { box-sizing: border-box; }
 body,
 html {
     width: 100%;
@@ -283,3 +284,13 @@ p.copyright {
 .resume-name-title > h1, .lis {
     text-align: center;
 }
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-item { width: 22%; }
+/* fluid 4% gutter */
+.gutter-sizer { width: 4%; }
