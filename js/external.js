@@ -1,3 +1,4 @@
+
 var projects = {
     "projects": [{
         "title": "Book Swap",
@@ -112,6 +113,15 @@ var projects = {
 
     }
 };
+
+
+$.fn.preload = function() {
+    this.each(function(){
+        $('<img/>')[0].src = this;
+    });
+}
+var imageArray = projects.projects.map((project) => { return project.image });
+$(imageArray).preload();
 
 //function calls
 projects.display();
