@@ -9,7 +9,7 @@ export default () => {
           </div>
           <div className="col-lg-8">
             <div className="intro-message">
-              <h1>Jae-Min Baek</h1>
+              <h1>John Baek</h1>
               <h3>Deep Learning, Machine Learning, Software Engineering</h3>
               <hr className="intro-divider" />
               <ul className="list-inline intro-social-buttons">

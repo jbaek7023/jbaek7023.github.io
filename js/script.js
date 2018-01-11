@@ -1,102 +1,57 @@
-
-
 $(document).ready(function(){
+  // all, ai, ad, sa, in
 	$('#all').click(function(){
-		if($(this).hasClass('not-active-button')){
-			// if all is off then toggleoff
-			toggleon($(this));
-			toggleoff($('#work'));
-			toggleoff($('#school'));
-			toggleoff($('#personal'));
-		}
-		effect($('#all'), $('#work'), $('#school'), $('#personal'));
 		$('#grid').isotope({ filter: '*' });
+		toggleoff($('#all'));
+		toggleoff($('#ai'));
+		toggleoff($('#ad'));
+		toggleoff($('#sa'));
+		toggleoff($('#in'));
+		toggleon($(this));
+		effect($('#all'), $('#ai'), $('#ad'), $('#sa'), $('#in'));
 	});
 
 	$('#ai').click(function(){
 		$('#grid').isotope({ filter: '.ai' })
-		if($(this).hasClass('not-active-button')){
-
-			// if work is off then turn it on
-			toggleon($(this));
-			if ($('#all').hasClass('active-button')) {
-				toggleoff($('#all'));
-			}
-		}
-		else{
-
-			// when turning off, if rest of the
-			toggleoff($(this));
-			if($('#school').hasClass('not-active-button') && $('#personal').hasClass('not-active-button')){
-				// then turn on all automatically
-				toggleon($('#all'));
-			}
-		}
-		effect($('#all'), $('#work'), $('#school'), $('#personal'));
+		toggleoff($('#all'));
+		toggleoff($('#ai'));
+		toggleoff($('#ad'));
+		toggleoff($('#sa'));
+		toggleoff($('#in'));
+		toggleon($(this));
+		effect($('#all'), $('#ai'), $('#ad'), $('#sa'), $('#in'));
 	});
+
 	$('#ad').click(function(){
 		$('#grid').isotope({ filter: '.ad' })
-
-		if($(this).hasClass('not-active-button')){
-
-			// if work is off then turn it on
-			toggleon($(this));
-			if ($('#all').hasClass('active-button')) {
-				toggleoff($('#all'));
-			}
-		}
-		else{
-
-			// when turning off, if rest of the
-			toggleoff($(this));
-			if($('#work').hasClass('not-active-button') && $('#personal').hasClass('not-active-button')){
-				// then turn on all automatically
-				toggleon($('#all'));
-			}
-		}
-		effect($('#all'), $('#work'), $('#school'), $('#personal'));
+		toggleoff($('#all'));
+		toggleoff($('#ai'));
+		toggleoff($('#ad'));
+		toggleoff($('#sa'));
+		toggleoff($('#in'));
+		toggleon($(this));
+		effect($('#all'), $('#ai'), $('#ad'), $('#sa'), $('#in'));
 	});
+
 	$('#sa').click(function(){
 		$('#grid').isotope({ filter: '.sa' })
-		if($(this).hasClass('not-active-button')){
-
-			// if work is off then turn it on
-			toggleon($(this));
-			if ($('#all').hasClass('active-button')) {
-				toggleoff($('#all'));
-			}
-		}
-		else{
-
-			// when turning off, if rest of the
-			toggleoff($(this));
-			if($('#school').hasClass('not-active-button') && $('#work').hasClass('not-active-button')){
-				// then turn on all automatically
-				toggleon($('#all'));
-			}
-		}
-		effect($('#all'), $('#work'), $('#school'), $('#personal'));
+		toggleoff($('#all'));
+		toggleoff($('#ai'));
+		toggleoff($('#ad'));
+		toggleoff($('#sa'));
+		toggleoff($('#in'));
+		toggleon($(this));
+		effect($('#all'), $('#ai'), $('#ad'), $('#sa'), $('#in'));
 	});
 	$('#in').click(function(){
 		$('#grid').isotope({ filter: '.in' })
-		if($(this).hasClass('not-active-button')){
-
-			// if work is off then turn it on
-			toggleon($(this));
-			if ($('#all').hasClass('active-button')) {
-				toggleoff($('#all'));
-			}
-		}
-		else{
-
-			// when turning off, if rest of the
-			toggleoff($(this));
-			if($('#school').hasClass('not-active-button') && $('#work').hasClass('not-active-button')){
-				// then turn on all automatically
-				toggleon($('#all'));
-			}
-		}
-		effect($('#all'), $('#work'), $('#school'), $('#personal'));
+		toggleoff($('#all'));
+		toggleoff($('#ai'));
+		toggleoff($('#ad'));
+		toggleoff($('#sa'));
+		toggleoff($('#in'));
+		toggleon($(this));
+		effect($('#all'), $('#ai'), $('#ad'), $('#sa'), $('#in'));
 	});
 
 

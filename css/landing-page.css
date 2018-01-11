@@ -129,6 +129,7 @@ h6 {
 
 .section-heading {
     margin-bottom: 30px;
+    margin-top: 5px;
 }
 
 .section-heading-spacer {
@@ -298,4 +299,28 @@ p.copyright {
 .btn {
   margin: 0px;
   padding: 0px;
+}
+
+.jconfirm.jconfirm-bootstrap .jconfirm-box .jconfirm-buttons{
+  visibility: hidden;
+}
+
+.jconfirm.jconfirm-bootstrap .jconfirm-box .jconfirm-buttons button{
+  visibility: hidden;
+}
+
+.active-button {
+  background-color: #1E90FF;
+  color: #f8f8f8;
+}
+
+.not-active-button {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.git-style {
+  text-decoration: none;
+  decoration: none;
+  color: #000000;
 }
