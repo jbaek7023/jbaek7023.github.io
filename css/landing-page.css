@@ -291,8 +291,11 @@ p.copyright {
   display: block;
   clear: both;
 }
-
 .grid-item { width: 29%; }
+@media only screen and (max-width: 992px) {
+  .grid-item { width: 96%; }
+}
+
 /* fluid 4% gutter */
 .gutter-sizer { width: 4%; }
 

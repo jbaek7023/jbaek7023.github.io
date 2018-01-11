@@ -66,17 +66,21 @@ var projects = {
                 <img src="http://lorempixel.com/output/people-q-c-600-200-1.jpg"/>
                 <h4 style="margin-top:17px; margin-left: 8px;">Abstract</h4>
                 <p style="margin-top:10px; margin-left: 8px;">${project.depthDescription}</p>
-
                 <p style="font-weight:bold; margin-left: 8px;">Source Code: <a class="git-style" href="${project.srcCode}"><i class="fa fa-github fa-fw" style="font-size: 30px;"></i></a></p>
                 <p style="font-weight:bold; margin-left: 8px;">Tech Stacks: <span style="font-weight:normal">${techStack}</span></p>
                 <p style="font-weight:bold; margin-left: 8px;">Contributor: <span style="font-weight:normal">${contributor}</span></p>
                 <p style="font-weight:bold; margin-left: 8px;">Year: <span style="font-weight:normal">${project.time}</span></p>
               `;
+              var width = $(window).width();
+              boxWidth = '50%';
+              if(width < 993) {
+                boxWidth = '90%';
+              }
 
               $.confirm({
                 theme: 'bootstrap',
                 closeIcon: true,
-                boxWidth: '50%',
+                boxWidth: boxWidth,
                 useBootstrap: false,
                 backgroundDismiss: 'buttonName',
                 content: content,
