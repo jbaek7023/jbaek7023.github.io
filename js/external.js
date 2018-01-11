@@ -119,7 +119,9 @@ $.fn.preload = function() {
     this.each(function(){
         $('<img/>')[0].src = this;
     });
+    console.log('here');
 }
+
 var imageArray = projects.projects.map((project) => { return project.image });
 $(imageArray).preload();
 
