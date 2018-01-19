@@ -1,26 +1,64 @@
+var projectArray = [
+  {
+    "title": "Stylee",
+    "description": "Book Swap Webpage for Georgia Tech Student",
+    "depthDescription": "Facial keypoints include points around the eyes, nose, and mouth on any face and are used in many applications, from facial tracking to emotion recognitionFacial keypoints include points around the eyes, nose, and mouth on any face and are used in many applications, from facial tracking to emotion recognitionFacial keypoints include points around the eyes, nose, and mouth on any face and are used in many applications, from facial tracking to emotion recognitionFacial keypoints include points around the eyes, nose, and mouth on any face and are used in many applications, from facial tracking to emotion recognitionFacial keypoints include points around the eyes, nose, and mouth on any face and are used in many applications, from facial tracking to emotion recognition. Your completed code should be able to take in any image containing faces and identify the location of each face and their facial keypoints, as shown below.",
+    "tags": ["ad"],
+    "image": "img/stylee.jpg",
+    "stacks": ["React Native", "Django RESTful Framework"],
+    "contributor": ["John Baek (Me)"],
+    "time": 201801,
+    "srcCode" : 'https://github.com/jbaek7023/LC2200Processor-1'
+  }, {
+    "title": "Sudoku Solver",
+    "description": "A simple AI using Constraint Propagation and Search to solve Sudoku puzzles.",
+    "depthDescription": "Facial keypoints include points around the eyes, nose, and mouth on any face and are used in many applications, from facial tracking to emotion recognition. Your completed code should be able to take in any image containing faces and identify the location of each face and their facial keypoints, as shown below.",
+    "tags": ["ai"],
+    "image": "img/sudoku.jpg",
+    "stacks": ["Python"],
+    "contributor": ["John Baek (Me)"],
+    "time": 201700,
+    "srcCode" : 'https://github.com/jbaek7023/SudokuGameSolver'
+  }, {
+    "title": "Isolation Game Play Agent",
+    "description": "ASDASDASDeorgia Tech Student",
+    "depthDescription": "Facial keypoints include points around the eyes, nose, and mouth on any face and are used in many applications, from facial tracking to emotion recognition. Your completed code should be able to take in any image containing faces and identify the location of each face and their facial keypoints, as shown below.",
+    "tags": ["ai"],
+    "image": "img/isolation.jpg",
+    "stacks": ["Java", "C++"],
+    "contributor": ["John Baek (Me)"],
+    "time": 201700,
+    "srcCode" : 'https://github.com/jbaek7023/LC2200Processor-1'
+  }, {
+    "title": "YEAP Swap",
+    "description": "ASDASDASDeorgia Tech Student",
+    "depthDescription": "Facial keypoints include points around the eyes, nose, and mouth on any face and are used in many applications, from facial tracking to emotion recognition. Your completed code should be able to take in any image containing faces and identify the location of each face and their facial keypoints, as shown below.",
+    "tags": ["ad"],
+    "image": "http://lorempixel.com/output/people-q-c-600-200-1.jpg",
+    "stacks": ["Java", "C++"],
+    "contributor": ["John Baek (Me)"],
+    "time": 201700,
+    "srcCode" : 'https://github.com/jbaek7023/LC2200Processor-1'
+  }
+]
 
-var projects = {
-    "projects": [{
-        "title": "Book Swap",
-        "description": "Book Swap Webpage for Georgia Tech Student",
-        "depthDescription": "Facial keypoints include points around the eyes, nose, and mouth on any face and are used in many applications, from facial tracking to emotion recognitionFacial keypoints include points around the eyes, nose, and mouth on any face and are used in many applications, from facial tracking to emotion recognitionFacial keypoints include points around the eyes, nose, and mouth on any face and are used in many applications, from facial tracking to emotion recognitionFacial keypoints include points around the eyes, nose, and mouth on any face and are used in many applications, from facial tracking to emotion recognitionFacial keypoints include points around the eyes, nose, and mouth on any face and are used in many applications, from facial tracking to emotion recognition. Your completed code should be able to take in any image containing faces and identify the location of each face and their facial keypoints, as shown below.",
-        "tags": ["ai", "ad", "sa", "in"],
-        "image": "http://lorempixel.com/output/people-q-c-600-200-1.jpg",
-        "stacks": ["Java", "C++"],
-        "contributor": ["John Baek (Me)"],
-        "time": '2017',
-        "srcCode" : 'https://github.com/jbaek7023/LC2200Processor-1'
-    }, {
-			"title": "YEAP Swap",
-			"description": "ASDASDASDeorgia Tech Student",
-      "depthDescription": "Facial keypoints include points around the eyes, nose, and mouth on any face and are used in many applications, from facial tracking to emotion recognition. Your completed code should be able to take in any image containing faces and identify the location of each face and their facial keypoints, as shown below.",
-			"tags": ["ai", "sa"],
-			"image": "http://lorempixel.com/output/people-q-c-600-200-1.jpg",
-      "stacks": ["Java", "C++"],
-      "contributor": ["John Baek (Me)"],
-      "time": '2017',
-      "srcCode" : 'https://github.com/jbaek7023/LC2200Processor-1'
-    }],
+$.fn.preload = function() {
+    this.each(function(){
+        $('<img/>')[0].src = this;
+    });
+}
+var imageArray = projectArray.map((project) => { return project.image });
+// Preload image data
+$(imageArray).preload();
+
+var sortedProjectArray = projectArray.sort(function(a, b) {
+  if(a.time > b.time) { return -1 }
+  if(a.time < b.time) { return 1 }
+  return 0;
+}),
+
+projects = {
+    "projects": sortedProjectArray,
     "display": function() {
         projects.projects.forEach(function(project) {
 					var tags = project.tags;
@@ -64,13 +102,13 @@ var projects = {
                 else { contributor += ", " + con; }
               });
               var content = `
-                <img src="http://lorempixel.com/output/people-q-c-600-200-1.jpg"/>
+                <img src="${project.image}"/>
                 <h4 style="margin-top:17px; margin-left: 8px;">Abstract</h4>
                 <p style="margin-top:10px; margin-left: 8px;">${project.depthDescription}</p>
                 <p style="font-weight:bold; margin-left: 8px;">Source Code: <a class="git-style" href="${project.srcCode}"><i class="fa fa-github fa-fw" style="font-size: 30px;"></i></a></p>
                 <p style="font-weight:bold; margin-left: 8px;">Tech Stacks: <span style="font-weight:normal">${techStack}</span></p>
                 <p style="font-weight:bold; margin-left: 8px;">Contributor: <span style="font-weight:normal">${contributor}</span></p>
-                <p style="font-weight:bold; margin-left: 8px;">Year: <span style="font-weight:normal">${project.time}</span></p>
+                <p style="font-weight:bold; margin-left: 8px;">Year: <span style="font-weight:normal">${parseInt(project.time/100)}</span></p>
               `;
               var width = $(window).width();
               boxWidth = '50%';
@@ -114,20 +152,10 @@ var projects = {
     }
 };
 
-
-$.fn.preload = function() {
-    this.each(function(){
-        $('<img/>')[0].src = this;
-    });
-    console.log('here');
-}
-
-var imageArray = projects.projects.map((project) => { return project.image });
-$(imageArray).preload();
-
-//function calls
+// add DOMS which contains project data
 projects.display();
 
+// set the 'fitRows' layout mode
 $('#grid').isotope({
   layoutMode: 'fitRows',
   itemSelector: '.grid-item',
