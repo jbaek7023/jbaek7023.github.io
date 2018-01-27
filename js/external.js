@@ -105,7 +105,7 @@ projects = {
                 <img src="${project.image}"/>
                 <h4 style="margin-top:17px; margin-left: 8px;">Abstract</h4>
                 <p style="margin-top:10px; margin-left: 8px;">${project.depthDescription}</p>
-                <p style="font-weight:bold; margin-left: 8px;">Source Code: <a class="git-style" href="${project.srcCode}"><i class="fa fa-github fa-fw" style="font-size: 30px;"></i></a></p>
+                <p style="font-weight:bold; margin-left: 8px;">Source Code: <a class="git-style" href="${project.srcCode}" target="_blank"><i class="fa fa-github fa-fw" style="font-size: 30px;"></i></a></p>
                 <p style="font-weight:bold; margin-left: 8px;">Tech Stacks: <span style="font-weight:normal">${techStack}</span></p>
                 <p style="font-weight:bold; margin-left: 8px;">Contributor: <span style="font-weight:normal">${contributor}</span></p>
                 <p style="font-weight:bold; margin-left: 8px;">Year: <span style="font-weight:normal">${parseInt(project.time/100)}</span></p>
